@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Image Clicker</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 50px;
+    }
+    #image {
+      width: 400px;
+      height: 300px;
+      border: 2px solid #ccc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 20px;
+      background-size: contain; 
+      background-repeat: no-repeat;
+      background-position: center;
+      font-size: 1.2em;
+      color: #666;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .thumbnail-container {
+      display: flex;
+      gap: 15px;
+    }
+    .thumbnail {
+      width: 100px;
+      height: 75px;
+      border: 2px solid #eee;
+      cursor: pointer;
+      transition: border-color 0.2s;
+    }
+    .thumbnail:hover {
+      border-color: #007bff;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="image">
+    Nhấp vào một hình ảnh bên dưới để hiển thị ở đây.
+  </div>
+
+  <div class="thumbnail-container">
+    <img class="thumbnail" 
+         src="https://via.placeholder.com/150/FF5733/FFFFFF?text=Anh1" 
+         alt="Cảnh mặt trời lặn tuyệt đẹp trên biển" 
+         onclick="displayImage(this)">
+         
+    <img class="thumbnail" 
+         src="https://via.placeholder.com/150/33FF57/FFFFFF?text=Anh2" 
+         alt="Một chú mèo con đang ngủ đáng yêu" 
+         onclick="displayImage(this)">
+         
+    <img class="thumbnail" 
+         src="https://via.placeholder.com/150/3357FF/FFFFFF?text=Anh3" 
+         alt="Dãy núi hùng vĩ phủ đầy tuyết" 
+         onclick="displayImage(this)">
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
