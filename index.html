@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Image Clicker</title>
+  
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -9,11 +10,14 @@
       flex-direction: column;
       align-items: center;
       margin-top: 50px;
+      background-color: #222;
+      color: #eee;
     }
+    
     #image {
-      width: 400px;
-      height: 300px;
-      border: 2px solid #ccc;
+      width: 500px;
+      height: 350px;
+      border: 2px solid #555; 
       display: flex;
       justify-content: center;
       align-items: center;
@@ -22,21 +26,25 @@
       background-repeat: no-repeat;
       background-position: center;
       font-size: 1.2em;
-      color: #666;
+      color: #999; 
       text-align: center;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
     }
+    
     .thumbnail-container {
       display: flex;
       gap: 15px;
     }
+    
     .thumbnail {
-      width: 100px;
-      height: 75px;
-      border: 2px solid #eee;
+      width: 120px; 
+      height: 90px;
+      border: 2px solid #444;
       cursor: pointer;
       transition: border-color 0.2s;
+      object-fit: cover; 
     }
+    
     .thumbnail:hover {
       border-color: #007bff;
     }
@@ -50,21 +58,33 @@
 
   <div class="thumbnail-container">
     <img class="thumbnail" 
-         src="https://via.placeholder.com/150/FF5733/FFFFFF?text=Anh1" 
+         src="https://images.pexels.com/photos/36717/amazing-animal-beautiful-beautifull.jpg?auto=compress&cs=tinysrgb&w=160" 
          alt="Cảnh mặt trời lặn tuyệt đẹp trên biển" 
          onclick="displayImage(this)">
          
     <img class="thumbnail" 
-         src="https://via.placeholder.com/150/33FF57/FFFFFF?text=Anh2" 
+         src="https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg?auto=compress&cs=tinysrgb&w=160" 
          alt="Một chú mèo con đang ngủ đáng yêu" 
          onclick="displayImage(this)">
          
     <img class="thumbnail" 
-         src="https://via.placeholder.com/150/3357FF/FFFFFF?text=Anh3" 
+         src="https://images.pexels.com/photos/371589/pexels-photo-371589.jpeg?auto=compress&cs=tinysrgb&w=160" 
          alt="Dãy núi hùng vĩ phủ đầy tuyết" 
          onclick="displayImage(this)">
   </div>
 
-  <script src="script.js"></script>
+  <script>
+    function displayImage(clickedImage) {
+      let mainImageDiv = document.getElementById("image");
+    
+      mainImageDiv.style.backgroundImage = `url('${clickedImage.src}')`;
+      
+      mainImageDiv.innerText = clickedImage.alt;
+    
+      console.log("Đã hiển thị ảnh:", clickedImage.src);
+      console.log("Mô tả:", clickedImage.alt);
+    }
+  </script>
+
 </body>
 </html>
